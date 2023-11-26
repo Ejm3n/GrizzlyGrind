@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             isSliding = false;
+            animator.SetBool("Jumping", false);
         }
 
         else if (collision.gameObject.CompareTag("Rail"))
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            animator.SetBool("Jumping", true);
         }
         else if(collision.gameObject.CompareTag("Rail"))
         {
